@@ -1,0 +1,29 @@
+2017-04-20T11:15:50+02:00 INFO Setup Beat: metricbeat; Version: 5.3.0
+2017-04-20T11:15:50+02:00 INFO Loading template enabled. Reading template file: /home/patty/Documents/metricbeat-5.3.0/metricbeat.template.json
+2017-04-20T11:15:50+02:00 INFO Loading template enabled for Elasticsearch 2.x. Reading template file: /home/patty/Documents/metricbeat-5.3.0/metricbeat.template-es2x.json
+2017-04-20T11:15:50+02:00 INFO Elasticsearch url: http://localhost:9200
+2017-04-20T11:15:50+02:00 INFO Activated elasticsearch as output plugin.
+2017-04-20T11:15:50+02:00 INFO Publisher name: patty-Lenovo
+2017-04-20T11:15:50+02:00 INFO Flush Interval set to: 1s
+2017-04-20T11:15:50+02:00 INFO Max Bulk Size set to: 50
+2017-04-20T11:15:50+02:00 INFO Register [ModuleFactory:[docker, mongodb, mysql, postgresql, system], MetricSetFactory:[apache/status, ceph/cluster_disk, ceph/cluster_health, ceph/monitor_health, ceph/pool_disk, couchbase/bucket, couchbase/cluster, couchbase/node, docker/container, docker/cpu, docker/diskio, docker/healthcheck, docker/image, docker/info, docker/memory, docker/network, haproxy/info, haproxy/stat, kafka/consumergroup, kafka/partition, mongodb/dbstats, mongodb/status, mysql/status, nginx/stubstatus, php_fpm/pool, postgresql/activity, postgresql/bgwriter, postgresql/database, prometheus/collector, prometheus/stats, redis/info, redis/keyspace, system/core, system/cpu, system/diskio, system/filesystem, system/fsstat, system/load, system/memory, system/network, system/process, system/socket, zookeeper/mntr]]
+2017-04-20T11:15:50+02:00 INFO metricbeat start running.
+2017-04-20T11:15:50+02:00 WARN EXPERIMENTAL feature dynamic configuration reloading is enabled.
+2017-04-20T11:15:50+02:00 INFO Config reloader started
+2017-04-20T11:16:00+02:00 ERR Error loading config: invalid config: config file ("/home/patty/Documents/metricbeat-5.3.0/conf.d/Apache.yml") can only be writable by the owner but the permissions are "-rw-rw-r--" (to fix the permissions use: 'chmod go-w /home/patty/Documents/metricbeat-5.3.0/conf.d/Apache.yml')
+2017-04-20T11:16:00+02:00 ERR Error loading config: invalid config: config file ("/home/patty/Documents/metricbeat-5.3.0/conf.d/MongoDB.yml") can only be writable by the owner but the permissions are "-rw-rw-r--" (to fix the permissions use: 'chmod go-w /home/patty/Documents/metricbeat-5.3.0/conf.d/MongoDB.yml')
+2017-04-20T11:16:00+02:00 ERR Error loading config: invalid config: config file ("/home/patty/Documents/metricbeat-5.3.0/conf.d/MySQL.yml") can only be writable by the owner but the permissions are "-rw-rw-r--" (to fix the permissions use: 'chmod go-w /home/patty/Documents/metricbeat-5.3.0/conf.d/MySQL.yml')
+2017-04-20T11:16:00+02:00 ERR Error loading config: invalid config: config file ("/home/patty/Documents/metricbeat-5.3.0/conf.d/Nginx.yml") can only be writable by the owner but the permissions are "-rw-rw-r--" (to fix the permissions use: 'chmod go-w /home/patty/Documents/metricbeat-5.3.0/conf.d/Nginx.yml')
+2017-04-20T11:16:00+02:00 ERR Error loading config: invalid config: config file ("/home/patty/Documents/metricbeat-5.3.0/conf.d/PostgreSQL.yml") can only be writable by the owner but the permissions are "-rw-rw-r--" (to fix the permissions use: 'chmod go-w /home/patty/Documents/metricbeat-5.3.0/conf.d/PostgreSQL.yml')
+2017-04-20T11:16:00+02:00 ERR Error loading config: invalid config: config file ("/home/patty/Documents/metricbeat-5.3.0/conf.d/Redis.yml") can only be writable by the owner but the permissions are "-rw-rw-r--" (to fix the permissions use: 'chmod go-w /home/patty/Documents/metricbeat-5.3.0/conf.d/Redis.yml')
+2017-04-20T11:16:00+02:00 ERR Error loading config: invalid config: config file ("/home/patty/Documents/metricbeat-5.3.0/conf.d/php.yml") can only be writable by the owner but the permissions are "-rw-rw-r--" (to fix the permissions use: 'chmod go-w /home/patty/Documents/metricbeat-5.3.0/conf.d/php.yml')
+2017-04-20T11:16:00+02:00 ERR Error loading config: invalid config: config file ("/home/patty/Documents/metricbeat-5.3.0/conf.d/system.yml") can only be writable by the owner but the permissions are "-rw-rw-r--" (to fix the permissions use: 'chmod go-w /home/patty/Documents/metricbeat-5.3.0/conf.d/system.yml')
+2017-04-20T11:16:00+02:00 INFO Stopping 0 runners ...
+2017-04-20T11:16:00+02:00 INFO Starting 0 runners ...
+2017-04-20T11:16:20+02:00 INFO Non-zero metrics in the last 30s: libbeat.config.reloads=2
+2017-04-20T11:16:50+02:00 INFO Non-zero metrics in the last 30s: libbeat.config.reloads=3
+2017-04-20T11:17:18+02:00 INFO Dynamic config reloader stopped
+2017-04-20T11:17:18+02:00 INFO Stopping 0 runners ...
+2017-04-20T11:17:18+02:00 INFO Total non-zero values:  libbeat.config.reloads=8
+2017-04-20T11:17:18+02:00 INFO Uptime: 1m28.518921036s
+2017-04-20T11:17:18+02:00 INFO metricbeat stopped.

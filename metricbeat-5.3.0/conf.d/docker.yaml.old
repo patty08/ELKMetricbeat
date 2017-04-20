@@ -1,0 +1,35 @@
+#------------------------------- Docker Module -------------------------------
+- module: docker
+  metricsets: ["container", "cpu", "diskio", "info", "memory", "network"]
+  hosts: ["unix:///var/run/docker.sock"]
+  enabled: true
+  period: 10s
+
+  # To connect to Docker over TLS you must specify a client and CA certificate.
+  #ssl:
+    #certificate_authority: "/etc/pki/root/ca.pem"
+    #certificate:           "/etc/pki/client/cert.pem"
+    #key:                   "/etc/pki/client/cert.key"
+
+#================================ Processors ===================================
+
+# Processors are used to reduce the number of fields in the exported event or to
+# enhance the event with external metadata. This section defines a list of
+# processors that are applied one by one and the first one receives the initial
+# event:
+#
+#   event -> filter1 -> event1 -> filter2 ->event2 ...
+#
+# The supported processors are drop_fields, drop_event, include_fields, and
+# add_cloud_metadata.
+#
+# For example, you can use the following processors to keep the fields that
+# contain CPU load percentages, but remove the fields that contain CPU ticks
+# values:
+
+
+# Docker
+processors:
+- drop_fields:
+   fields: ["docker.container.command","docker.container.created","docker.container.id","docker.container.image","docker.container.name","docker.container.status","docker.container.size.root_fs","docker.container.size.rw","docker.container.labels","docker.container.tags","docker.cpu.kernel.ticks","docker.cpu.system.ticks","docker.cpu.user.ticks","docker.healthcheck.failingstreak","docker.healthcheck.status","docker.healthcheck.event.end_date","docker.healthcheck.event.start_date","docker.healthcheck.event.output","docker.healthcheck.event.exit_code","docker.image.id.current","docker.image.id.parent","docker.image.created","docker.image.size.virtual","docker.image.size.regular","docker.image.labels","docker.image.tags","docker.info.images","docker.memory.fail.count","docker.memory.limit","docker.memory.rss.total","docker.memory.rss.pct","docker.memory.usage.total","docker.network.interface","docker.network.in.dropped","docker.network.in.packets","docker.network.out.dropped","docker.network.out.packets"]
+   
