@@ -1,21 +1,11 @@
-#------------------------------- Apache Module -------------------------------
-- module: apache
-  metricsets: ["status"]
+#------------------------------- php_fpm Module ------------------------------
+- module: php_fpm
+  metricsets: ["pool"]
   enabled: true
   period: 10s
-
- #Apache hosts
-  hosts: ["http://127.0.0.1:80"]
-
-  # Path to server status. Default server-status
-  server_status_path: "server-status"
-
-  # Username of hosts.  Empty by default
-  #username: test
-
-  # Password of hosts. Empty by default
-  #password: test123
-
+  status_path: "/status"
+  hosts: ["localhost:8082"]
+  
 #================================ Processors ===================================
 
 # Processors are used to reduce the number of fields in the exported event or to
@@ -33,7 +23,7 @@
 # values:
 
 
-# Apache
-processors:
-- drop_fields:
-   fields: [""]
+# php_fpm
+#processors:
+#- drop_fields:
+#   fields: [""]

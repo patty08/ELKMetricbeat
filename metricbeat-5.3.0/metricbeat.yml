@@ -22,6 +22,77 @@ metricbeat.config.modules:
   # Set to true to enable config reloading
   reload.enabled: false
 
+#================================ Processors ===================================
+
+# Processors are used to reduce the number of fields in the exported event or to
+# enhance the event with external metadata. This section defines a list of
+# processors that are applied one by one and the first one receives the initial
+# event:
+#
+#   event -> filter1 -> event1 -> filter2 ->event2 ...
+#
+# The supported processors are drop_fields, drop_event, include_fields, and
+# add_cloud_metadata.
+#
+# For example, you can use the following processors to keep the fields that
+# contain CPU load percentages, but remove the fields that contain CPU ticks
+# values:
+
+
+# Docker
+processors:
+- drop_fields:
+   fields: ["docker.container.command","docker.container.created","docker.container.id","docker.container.image","docker.container.name","docker.container.status","docker.container.size.root_fs","docker.container.size.rw","docker.container.labels","docker.container.tags","docker.cpu.kernel.ticks","docker.cpu.system.ticks",
+   "docker.cpu.user.ticks","docker.healthcheck.failingstreak","docker.healthcheck.status","docker.healthcheck.event.end_date","docker.healthcheck.event.start_date","docker.healthcheck.event.output","docker.healthcheck.event.exit_code","docker.image.id.current","docker.image.id.parent","docker.image.created","docker.image.size.virtual","docker.image.size.regular","docker.image.labels","docker.image.tags","docker.info.images","docker.memory.fail.count","docker.memory.limit","docker.memory.rss.total","docker.memory.rss.pct","docker.memory.usage.total","docker.network.interface","docker.network.in.dropped","docker.network.in.packets","docker.network.out.dropped","docker.network.out.packets",
+   "system.cpu.nice.pct","system.cpu.idle.pct","system.cpu.irq.pct","system.cpu.softirq.pct","system.cpu.steal.pct","system.cpu.user.ticks","system.cpu.system.ticks","system.cpu.nice.ticks","system.cpu.idle.ticks","system.cpu.iowait.ticks","system.cpu.irq.ticks","system.cpu.softirq.ticks","system.cpu.steal.ticks",
+   "system.diskio.serial_number","system.diskio.read.count","system.diskio.write.count","system.diskio.read.bytes","system.diskio.write.bytes",
+   "system.filesystem.files","system.filesystem.free_files","system.filesystem.total","system.filesystem.used.bytes",
+   "system.load.norm.1","system.load.norm.5","system.load.norm.15",
+   "system.memory.total","system.memory.used.bytes","system.memory.free","system.memory.used.pct","system.memory.swap.total","system.memory.swap.used.bytes","system.memory.swap.free","system.memory.swap.used.pct",system.memory.actual.used.bytes","system.memory.actual.free","system.memory.actual.used.pct",
+   "system.network.out.packets","system.network.in.packets","system.network.in.dropped","system.network.out.dropped"]
+  
+
+# CPU
+#processors:
+#- drop_fields:
+#   fields: ["system.cpu.nice.pct","system.cpu.idle.pct","system.cpu.irq.pct","system.cpu.softirq.pct","system.cpu.steal.pct","system.cpu.user.ticks","system.cpu.system.ticks","system.cpu.nice.ticks","system.cpu.idle.ticks","system.cpu.iowait.ticks","system.cpu.irq.ticks","system.cpu.softirq.ticks","system.cpu.steal.ticks"]
+
+# Diskio
+# processors:
+#- drop_fields:
+#   fields: ["system.diskio.serial_number","system.diskio.read.count","system.diskio.write.count","system.diskio.read.bytes","system.diskio.write.bytes"]
+   
+# Filesystem
+# processors:
+#- drop_fields:
+#   fields: ["system.filesystem.files","system.filesystem.free_files","system.filesystem.total","system.filesystem.used.bytes"]
+   
+# Load
+# processors:
+#- drop_fields:
+#   fields: ["system.load.norm.1","system.load.norm.5","system.load.norm.15"]
+   
+# Memory
+# processors:
+#- drop_fields:
+#   fields: ["system.memory.total","system.memory.used.bytes","system.memory.free","system.memory.used.pct","system.memory.swap.total","system.memory.swap.used.bytes","system.memory.swap.free","system.memory.swap.used.pct",system.memory.actual.used.bytes","system.memory.actual.free","system.memory.actual.used.pct"]
+   
+# Network
+# processors:
+#- drop_fields:
+#   fields: ["system.network.out.packets","system.network.in.packets","system.network.in.dropped","system.network.out.dropped"]
+
+
+#The following example drops the events that have the HTTP response code 200:
+
+#processors:
+# - drop_event:
+#     when:
+#        equals:
+#           http.code: 200
+
+
+
 #================================ Outputs ======================================
 
 # Configure what outputs to use when sending the data collected by the beat.
